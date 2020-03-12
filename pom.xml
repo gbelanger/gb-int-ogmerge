@@ -1,0 +1,123 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>OG_merge</groupId>
+  <artifactId>OG_merge</artifactId>
+  <packaging>jar</packaging>
+  <version>4.0</version>
+  <name>Maven Quick Start Archetype</name>
+  <url>http://maven.apache.org</url>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin </artifactId>
+        <version>2.3.2</version>
+        <configuration>  
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>2.3.1</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>OG_merge</mainClass>
+              <addClasspath>true</addClasspath>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>OG_merge</mainClass>
+            </manifest>
+          </archive>
+          <descriptors>
+            <descriptor>src/assemble/distribution.xml</descriptor>
+          </descriptors>
+        </configuration>
+      </plugin>
+
+    </plugins>
+
+    <resources>
+  
+       <resource>
+          <directory> src/main/resources/ </directory>
+          <includes>
+            <include> logger.config </include>
+            <include> og_ibis.fits </include>
+          </includes>
+       </resource>
+
+    </resources>
+
+  </build>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>nom.tam</groupId>
+      <artifactId>fits</artifactId>
+      <version>1.06</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>cern</groupId>
+      <artifactId>colt</artifactId>
+      <version>1.0</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.15</version>
+      <scope>compile</scope>
+    </dependency>
+
+  </dependencies>
+
+<repositories>
+
+  <repository>
+    <id>central-maven-repo</id>
+    <url>http://repo1.maven.org/maven2</url>
+  </repository>
+
+ <repository>
+    <id>com.springsource.repository.bundles.release</id>
+    <name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Releases</name>
+    <url>http://repository.springsource.com/maven/bundles/release</url>
+ </repository>
+
+ <repository>
+    <id>com.springsource.repository.bundles.external</id>
+    <name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
+    <url>http://repository.springsource.com/maven/bundles/external</url>
+ </repository>
+
+  <repository>
+    <id>freehep-maven</id>
+    <url>http://java.freehep.org/maven2</url>
+  </repository>
+
+  <repository>
+    <id>ibiblio-maven</id>
+    <url>http://www.ibiblio.org/maven2</url>
+  </repository>
+
+</repositories>
+ 
+</project>
